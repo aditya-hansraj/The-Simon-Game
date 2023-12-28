@@ -6,11 +6,23 @@ let started = false;
 let bgm;
 
 $(document).ready(function() {
-    $(document).keydown(function() {
+    $('#start-button').click(function() {
+        $(this).animate({
+            height: '-=2px',
+            width: '-=5px'
+        }, 100);
+        setTimeout(function() {
+            $('#start-button').animate({
+                height: '+=2px',
+                width: '+=5px'
+            }, 100)
+        }, 100)
         if(!started){
             startGame();
+            $(this).text('RESTART');
+            $(this).css('backgroundColor', 'grey');
         }
-    })
+    });
     $('.btn').click(function(){
         let clickedButton = $(this).attr('id');
         if(started){
@@ -33,10 +45,11 @@ $(document).ready(function() {
         gamePattern = [];
         playSound('wrong');
         $('body').css('backgroundColor', 'red');
-        $('#level-title').text('Game Over, Press Any Key to Restart');
+        $('#level-title').text('GAME OVER, RESTART GAME !');
         setTimeout(function(){
             $('body').css('backgroundColor', '#011F3F');
         }, 200);
+        $('#start-button').css('backgroundColor', 'red');
     }
     function checkInput(pressedButton){
         if(pressedButton === gamePattern[expectedButton]){
