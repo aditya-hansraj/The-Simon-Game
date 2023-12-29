@@ -49,6 +49,7 @@ $(document).ready(function() {
         expectedButton = 0;
         gamePattern = [];
         playSound('wrong');
+        console.log('Game Ended !');
         $('body').css('backgroundColor', 'red');
         $('#level-title').text('GAME OVER, RESTART GAME !');
         setTimeout(function(){
