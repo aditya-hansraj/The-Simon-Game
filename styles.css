@@ -75,3 +75,7 @@ body {
   cursor: pointer;
   outline: none;
 }
+
+.pointer{
+  cursor: pointer;
+}
