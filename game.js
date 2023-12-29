@@ -34,6 +34,11 @@ $(document).ready(function() {
     function startGame(){
         started = true;
         expectedButton = 0;
+        $('body').css('backgroundColor', 'lightGreen');
+        playSound('complete');
+        setTimeout(function(){
+            $('body').css('backgroundColor', '#011F3F');
+        }, 100);
         setTimeout(nextSequence, 1500);
         console.log(`Game Started !`);
         $('#level-title').text('Level '+ level);
