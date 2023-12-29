@@ -36,20 +36,22 @@ $(document).ready(function() {
         expectedButton = 0;
         $('body').css('backgroundColor', 'lightGreen');
         playSound('complete');
+        5
         setTimeout(function(){
             $('body').css('backgroundColor', '#011F3F');
         }, 100);
         setTimeout(nextSequence, 1500);
         console.log(`Game Started !`);
         $('#level-title').text('Level '+ level);
+        
     }
     function endGame(){
         started = false;
         level = 0;
         expectedButton = 0;
         gamePattern = [];
-        playSound('wrong');
         console.log('Game Ended !');
+        playSound('wrong');
         $('body').css('backgroundColor', 'red');
         $('#level-title').text('GAME OVER, RESTART GAME !');
         setTimeout(function(){
@@ -84,5 +86,17 @@ $(document).ready(function() {
         var randomColor = buttons[randomNumber];
         gamePattern.push(randomColor);
         press(randomColor);
+    }
+    function blinkById(elementId){
+        let element = $('#'+elementId);
+        let blinkInterval = setInterval(function(){
+            element.css('visibility', 'hidden');
+            setTimeout(function(){
+                element.css('visibility', 'visible');
+            }, 500)
+        }, 500);
+        setTimeout(function(){
+            clearInterval(blinkInterval);
+        },  3000);
     }
 })
