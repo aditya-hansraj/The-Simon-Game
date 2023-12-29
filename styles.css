@@ -79,3 +79,31 @@ body {
 .pointer{
   cursor: pointer;
 }
+
+footer{
+  font-family: 'Press Start 2P', cursive;
+  margin: 40px;
+  color: #FEF2BF;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer #high-score{
+
+}
+
+footer #rules{
+  border: 1px dashed;
+  border-radius: 5px;
+  background-color: #FEF2BF;
+  color: #011F3F;
+  padding: 10px;
+  padding-bottom: 5px;
+  height: 50px;
+  width: 50px;
+  font-size: 2rem;
+  font-family: 'Press Start 2P', cursive;
+  
+}
